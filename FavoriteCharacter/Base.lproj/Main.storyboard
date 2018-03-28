@@ -1,24 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ZapfDingbats.ttf">
+            <string>ZapfDingbatsITC</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="FavoriteCharacter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="super-mario" translatesAutoresizingMaskIntoConstraints="NO" id="Sqg-V1-ecp">
+                                <rect key="frame" x="59" y="68" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="8Np-Ca-yPU"/>
+                                    <constraint firstAttribute="width" constant="256" id="n8a-zU-jTn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IN-M7-LYP">
+                                <rect key="frame" x="93" y="388" width="189" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.66811620460143561" blue="0.38393770439923769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pon-nb-jLB">
+                                <rect key="frame" x="79" y="488" width="217" height="40"/>
+                                <color key="backgroundColor" red="0.86588086369999995" green="0.88190038069999999" blue="0.86805696610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="13"/>
+                                <state key="normal" title="Choose your favorite character!">
+                                    <color key="titleColor" red="0.2400180901" green="0.30877698879999999" blue="0.70371986040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChooseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZRQ-8R-tVI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5IN-M7-LYP" firstAttribute="top" secondItem="Sqg-V1-ecp" secondAttribute="bottom" constant="64" id="08g-aG-xmT"/>
+                            <constraint firstItem="pon-nb-jLB" firstAttribute="top" secondItem="5IN-M7-LYP" secondAttribute="bottom" constant="100" id="GCa-6D-hKv"/>
+                            <constraint firstItem="5IN-M7-LYP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="77" id="M7A-7Y-KMa"/>
+                            <constraint firstItem="Sqg-V1-ecp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="R8m-J3-hsw"/>
+                            <constraint firstItem="Sqg-V1-ecp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S3L-OZ-oCJ"/>
+                            <constraint firstItem="5IN-M7-LYP" firstAttribute="centerX" secondItem="pon-nb-jLB" secondAttribute="centerX" id="TAn-Ra-pP3"/>
+                            <constraint firstItem="pon-nb-jLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VZw-nf-iyb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="pon-nb-jLB" id="38s-Aq-Jdx"/>
+                        <outlet property="mainImageView" destination="Sqg-V1-ecp" id="iUQ-3s-A18"/>
+                        <outlet property="nameLabel" destination="5IN-M7-LYP" id="f9Y-nl-WTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="Pju-Ib-Fty">
+            <objects>
+                <viewController storyboardIdentifier="SelectionViewController" id="m8A-xl-Wc3" customClass="SelectionViewController" customModule="FavoriteCharacter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SE8-GD-Cbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5b-dO-DwC">
+                                <rect key="frame" x="112" y="149" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="B3Z-uC-dgU"/>
+                                    <constraint firstAttribute="height" constant="150" id="iJz-ks-LLl"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Mario"/>
+                                <connections>
+                                    <action selector="ChooseMario:" destination="m8A-xl-Wc3" eventType="touchUpInside" id="9c9-0F-Qle"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efe-0w-z5s">
+                                <rect key="frame" x="112" y="359" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="CNS-Gu-Mka"/>
+                                    <constraint firstAttribute="width" constant="150" id="qWe-Pm-3yi"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Luigi"/>
+                                <connections>
+                                    <action selector="ChooseLuigi:" destination="m8A-xl-Wc3" eventType="touchUpInside" id="0OK-5J-A3i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vM-fm-REB">
+                                <rect key="frame" x="101.5" y="52" width="172" height="17"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8vM-fm-REB" firstAttribute="top" secondItem="jn8-Nw-DCw" secondAttribute="top" constant="32" id="4w1-sL-97p"/>
+                            <constraint firstItem="B5b-dO-DwC" firstAttribute="centerX" secondItem="SE8-GD-Cbh" secondAttribute="centerX" id="GN1-rQ-LTb"/>
+                            <constraint firstItem="B5b-dO-DwC" firstAttribute="top" secondItem="8vM-fm-REB" secondAttribute="bottom" constant="80" id="Rhw-mq-QrG"/>
+                            <constraint firstItem="efe-0w-z5s" firstAttribute="leading" secondItem="B5b-dO-DwC" secondAttribute="leading" id="TYy-GD-n2p"/>
+                            <constraint firstItem="8vM-fm-REB" firstAttribute="centerX" secondItem="SE8-GD-Cbh" secondAttribute="centerX" id="ds6-Ff-e8v"/>
+                            <constraint firstItem="efe-0w-z5s" firstAttribute="top" secondItem="B5b-dO-DwC" secondAttribute="bottom" constant="60" id="u2b-h9-mip"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jn8-Nw-DCw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDj-R7-YSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.79999999999995" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Luigi" width="772" height="1024"/>
+        <image name="Mario" width="1692" height="2539"/>
+        <image name="super-mario" width="256" height="256"/>
+    </resources>
 </document>
